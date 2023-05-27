@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+영화 목록 페이지 <a href="/insertForm">[ADD]</a> <br/>
+<table border="2">
+    <tr th:each="m : ${base}">
+        <td> [[${m.idx}]] </td>
+        <td> <img th:src="@{${m.image}}" width="30" /> </td>
+        <td> <a th:href="@{/read/{idx}(idx=${m.idx})}">[[${m.team}]]</a> </td>
+        <td> <a th:href="@{/delete/{idx}(idx=${m.idx})}">삭제</a> </td>
+    </tr>
+</table>
+</body>
+</html>
